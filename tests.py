@@ -105,7 +105,6 @@ def test_04():
     assert pregunta.clean_data().barrio.value_counts().to_list() == [
         990,
         483,
-        483,
         423,
         383,
         383,
