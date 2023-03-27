@@ -39,5 +39,6 @@ def clean_data():
     df['barrio'] =  df['barrio'].str.replace('[^a-zA-Z0-9 \n\.]',' ',regex=True).str.replace('bel n','belen').str.replace('san jos  de la monta a','san jose de la montana').str.replace('antonio nari  o','antonio narino').str.replace('antonio nari o','antonio narino')
 
     df.drop_duplicates(inplace=True)
+    df.dropna(axis='index',inplace=True)
 
     return df
