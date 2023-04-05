@@ -1,16 +1,13 @@
 """
 Calificación del laboratorio
------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 """
-
 import sys
 
 import pregunta
 
-
 def test_01():
     assert pregunta.clean_data().sexo.value_counts().to_list() == [6617, 3589]
-
 
 def test_02():
     assert pregunta.clean_data().tipo_de_emprendimiento.value_counts().to_list() == [
@@ -19,7 +16,6 @@ def test_02():
         2201,
         164,
     ]
-
 
 def test_03():
     assert pregunta.clean_data().idea_negocio.value_counts().to_list() == [
@@ -99,7 +95,6 @@ def test_03():
         3,
         2,
     ]
-
 
 def test_04():
     assert pregunta.clean_data().barrio.value_counts().to_list() == [
@@ -339,7 +334,6 @@ def test_05():
         3,
     ]
 
-
 def test_06():
     assert pregunta.clean_data().comuna_ciudadano.value_counts().to_list() == [
         1326,
@@ -364,7 +358,6 @@ def test_06():
         12,
         10,
     ]
-
 
 def test_07():
     assert pregunta.clean_data().fecha_de_beneficio.value_counts().to_list() == [
@@ -1165,7 +1158,6 @@ def test_07():
         1,
     ]
 
-
 def test_08():
     assert pregunta.clean_data().monto_del_credito.value_counts().to_list() == [
         1174,
@@ -1447,7 +1439,6 @@ def test_08():
         1,
     ]
 
-
 def test_09():
     assert pregunta.clean_data().línea_credito.value_counts().to_list() == [
         10020,
@@ -1460,7 +1451,6 @@ def test_09():
         1,
         1,
     ]
-
 
 test = {
     "01": test_01,
