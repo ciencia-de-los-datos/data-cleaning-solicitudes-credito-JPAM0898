@@ -27,17 +27,19 @@ def clean_data():
          
     # Whitespaces, hyphen and underscore checks
     df['idea_negocio'] = df['idea_negocio'].str.replace('_',' ').str.replace('-',' ').str.strip()
-    df['barrio'] = df['barrio'].str.replace('_',' ').str.replace('-',' ').str.strip()
+    df['barrio'] = df['barrio'].str.replace('_','-').str.replace('-',' ')
     df['línea_credito'] = df['línea_credito'].str.replace('_',' ').str.replace('-',' ').str.strip()
 
     # Money check
     df['monto_del_credito'] = df['monto_del_credito'].str.replace(',','').str.replace('$','',regex=False).str.replace(' ','').str.strip().astype(float)   
     
     # Others
-    df['línea_credito'] = df['línea_credito'].str.replace('soli diaria','solidaria')
-    df['idea_negocio'] = df['idea_negocio'].str.replace('[^a-zA-Z0-9 \n\.]', ' ',regex=True).str.replace('organizaci n y','organizacion y').str.replace('pa alera','panalera')
-    df['barrio'] =  df['barrio'].str.replace('[^a-zA-Z0-9 \n\.]',' ',regex=True).str.replace('bel n','belen').str.replace('san jos  de la monta a','san jose de la montana').str.replace('antonio nari  o','antonio narino').str.replace('antonio nari o','antonio narino')
+    # df['línea_credito'] = df['línea_credito'].str.replace('soli diaria','solidaria')
+    # df['idea_negocio'] = df['idea_negocio'].str.replace('[^a-zA-Z0-9 \n\.]', ' ',regex=True).str.replace('organizaci n y','organizacion y').str.replace('pa alera','panalera')
+    # df['barrio'] =  df['barrio'].str.replace('[^a-zA-Z0-9 \n\.]',' ',regex=True).str.replace('bel n','belen').str.replace('san jos  de la monta a','san jose de la montana').str.replace('antonio nari  o','antonio narino').str.replace('antonio nari o','antonio narino')
 
     df.drop_duplicates(inplace=True)
+    df.dropna(axis='index',inplace=True)
 
     return df
+
