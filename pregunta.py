@@ -39,6 +39,4 @@ def clean_data():
 
     df.drop_duplicates(inplace=True)
     df.dropna(axis='index',inplace=True)
-
     return df
-
